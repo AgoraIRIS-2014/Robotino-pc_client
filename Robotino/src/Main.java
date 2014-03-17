@@ -1,9 +1,11 @@
-import robotino.Joystick;
+import robotino.Frame;
+
 
 public class Main {
 
 	public static void main(String[] args) {
-		Joystick joy = new Joystick();
+		Frame Window = new Frame();
+		
 	}
 
 }
