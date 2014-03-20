@@ -13,13 +13,24 @@ public class Joystick {
 		Body = new JPanel();
 		Control = new JPanel();
 		
-		
-		Body.setBackground(Color.blue);
-		Control.setBackground(Color.gray);
-		Body.setVisible(true);
-		Control.setVisible(true);
 		Body.add(Control);
+		
+		Body.setVisible(true);
+		Body.setSize(400, 400);
+		Body.setBackground(Color.blue);
+		
+		Control.setVisible(true);
+		Control.setSize(200, 200);
 	}
+	
+}
+
+class Control extends JPanel {
+	  public void paintComponent(Graphics g){                
+		  int x1 = this.getWidth()/4;
+		  int y1 = this.getHeight()/4;                      
+		  g.fillOval(x1, y1, this.getWidth()/2, this.getHeight()/2);
+	  }   
 }
 
 /*import java.awt.Graphics;
