@@ -22,7 +22,7 @@ public class IHM extends JFrame {
 	private String adrFile;
 	Robot robot1 = new Robot();
 	private String ip = "127.0.0.1:8080";
-	private float vitesse = 50;
+	private float vitesse = 100;
 	
 	CameraWidget camera = new CameraWidget(robot1);
 	//ConsoleWidget console = new ConsoleWidget();
@@ -33,14 +33,14 @@ public class IHM extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 850, 650);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(0, 0, 139));
+		contentPane.setBackground(new Color(0, 0, 50));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		final Joystick Jjoy = new Joystick(robot1);
 		Jjoy.setForeground(Color.LIGHT_GRAY);
 		Jjoy.setBackground(Color.WHITE);
-		Jjoy.setBounds(88, 44, 249, 244);
+		Jjoy.setBounds(50, 320, 249, 244);
 		contentPane.add(Jjoy);
 		
 		Jjoy.setLayout(null);
@@ -49,9 +49,14 @@ public class IHM extends JFrame {
 		lblJoystick.setBounds(10, 224, 98, 20);
 		Jjoy.add(lblJoystick);
 		
-		JButton button_8 = new JButton("");
-		button_8.setBounds(10, 44, 68, 68);
-		button_8.setIcon(new ImageIcon(IHM.class.getResource("/arrow/rg.png")));
+		JLabel jlabel1 = new JLabel("Rotation Gauche :");
+		jlabel1.setBounds(10, 10, 54, 14);
+		jlabel1.setForeground(new Color(192, 192, 192));
+		contentPane.add(jlabel1);
+		
+		JButton button_8 = new JButton("RG");
+		button_8.setBounds(60, 44, 68, 68);
+		//button_8.setIcon(new ImageIcon(IHM.class.getResource("/arrow/rg.png")));
 		button_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				robot1.setVelocity(0, 0, 30);
@@ -62,9 +67,9 @@ public class IHM extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.add(button_8);
 		
-		JButton button_9 = new JButton("");
-		button_9.setBounds(10, 44, 68, 68);
-		button_9.setIcon(new ImageIcon(IHM.class.getResource("/arrow/rd.png")));
+		JButton button_9 = new JButton("RD");
+		button_9.setBounds(200, 44, 68, 68);
+		//button_9.setIcon(new ImageIcon(IHM.class.getResource("/arrow/rd.png")));
 		button_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				robot1.setVelocity(0, 0, -30);
@@ -106,7 +111,7 @@ public class IHM extends JFrame {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Jjoy.SpeedDown();
-				vitesse = vitesse - 10;
+				vitesse = vitesse - 20;
 				txtSpeed.setText(String.valueOf(vitesse));
 			}
 		});
@@ -118,7 +123,7 @@ public class IHM extends JFrame {
 		button_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Jjoy.SpeedUp();
-				vitesse = vitesse + 10;
+				vitesse = vitesse + 20;
 				txtSpeed.setText(String.valueOf(vitesse));
 			}
 		});

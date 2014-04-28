@@ -12,7 +12,7 @@ public class Joystick extends JPanel {
 	cercle cerclePan, cercleCurs;
 	
 	public Joystick(final Robot robot1) {
-		cercleCurs = new cercle(83, 75, 82, 82, 210, 0, 0);
+		cercleCurs = new cercle(115, 105, 20, 20, 210, 0, 0);
 		cerclePan = new cercle(0, 0, 249, 228, 0, 0, 0);
 		
 		cerclePan.setLayout(null);
@@ -338,11 +338,11 @@ public class Joystick extends JPanel {
 	}
 	
 	public void SpeedUp() {
-		vitesse = vitesse+10;
+		vitesse = vitesse+20;
 	}
 	
 	public void SpeedDown() {
-		vitesse = vitesse-10;
+		vitesse = vitesse-20;
 	}
 	
 	public class cercle extends JPanel {
